@@ -1,0 +1,27 @@
+#myModal(class="modal hide fade in")
+			
+			div.modal-header
+				<a class="close" data-dismiss="modal">×</a>	
+				h4(ng-if="eAction =='show'") Show Contact
+				h4(ng-if="eAction =='add'") Add  Contact				
+				h4(ng-if="eAction =='edit'") Edit Contact
+
+				
+				
+			div(ng-if="eAction =='add' || eAction =='edit'", class="modal-body")
+				div(ng-if="statusInfo =='add'", class="alert-info") 
+					p &nbsp; New contact added.
+				div(ng-if="statusInfo =='update'", class="alert-info")
+					p &nbsp; New contact updated.	
+				form(class="form-control", role="form")
+					include ./contact-input.jade
+			div(ng-if="eAction =='show'", class="modal-body")
+				include ./contact-info.jade
+
+			div(ng-if="eAction =='add' || eAction =='edit'", class="modal-footer")
+				br
+				button(ng-if="eAction =='add'", ng-click='store()', class="btn btn-success", href="store()") Save contact				
+				button(ng-if="eAction =='edit'", ng-click='update(arrayIndex)', class="btn btn-success") Update  contact
+
+
+

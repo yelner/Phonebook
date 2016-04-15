@@ -1,0 +1,16 @@
+extends ../../views/layout
+
+block content
+
+	section(style="margin-left:3em;", ng-controller="phoneController")
+
+		h1=title
+		p Add your friends to your listssssample.
+
+		// Contact list
+		include ./_partials/contact-content.jade
+
+		// Add/Edit/show contact modal
+		include ./_partials/contact-modal.jade
+
+	

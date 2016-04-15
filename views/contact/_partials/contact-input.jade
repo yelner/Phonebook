@@ -1,0 +1,10 @@
+div(class="form-group")
+	input(value='', type='text', placeholder='Name', ng-model='editingContact.contactName')
+div(class="form-group")
+	input(value='', type='text', placeholder='Contact no: E.g: xxxx-xxxxxxx', ng-model="editingContact.contactNo", class="form-control has-error has-feedback" )
+span(style="color:red", ng-if="contactNoField !=''") Invalid phone number.
+
+
+
+			
+

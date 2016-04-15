@@ -1,0 +1,27 @@
+div.row
+	button(ng-click="create()", class="btn btn-info pull-right", data-toggle="modal", href="#myModal") Create Contact
+
+div(class='row')
+	div(class='col-lg-7 col-offset-lg-3')
+		div(class='panel panel-default')
+			div(class='panel-heading') 						
+				h4 All Contact - ( {{getTotalItems()}} ) 
+						
+			div.panel-body
+				div.table-responsive 							
+					table.table.table-striped.table-bordered.table-hover 
+						thead
+							tr
+								th Name
+								th(colspan="2") Contact No
+
+						tbody
+							tr(ng-repeat="contact in contacts") 
+								td(width="50%") {{contact.name}} 
+								td(width="30%") {{contact.cellno}} 
+								td(width="20%")
+									button(class="btn btn-info btn-sm", ng-click="show(contact)", data-toggle="modal", href="#myModal") view
+									| 
+									button(class="btn btn-info btn-sm", ng-click="edit(contact)", data-toggle="modal", href="#myModal") Edit
+									| 
+									button(class="btn btn-danger btn-sm", ng-click="delete(contact)") Delete
