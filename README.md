@@ -1,1 +1,1 @@
- Phonebook with nodejs and angular
+ Phonebook with nodeJS and AngularJS.
